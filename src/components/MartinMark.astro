@@ -1,0 +1,36 @@
+---
+// Martin app mark: line-drawn M whose right stem carries a teal
+// notification dot with signal arcs (from the Martin brand sheet).
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 158 118"
+  class:list={['h-10 w-auto', className]}
+  aria-hidden="true"
+>
+  <polyline
+    points="15,110 15,26 70,82 125,40 125,110"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"></polyline>
+  <circle cx="125" cy="15" r="11" fill="#129B85"></circle>
+  <path
+    d="M102 6 q-8 9 0 18"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="5"
+    stroke-linecap="round"></path>
+  <path
+    d="M148 6 q8 9 0 18"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="5"
+    stroke-linecap="round"></path>
+</svg>

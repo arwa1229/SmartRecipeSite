@@ -181,9 +181,9 @@ html[lang="ar"] .font-heading {
   animation-delay: 0.26s;
 }
 .sr-intro-bar.b3 {
-  background: #66e0cf;
+  background: #00bfa5;
   animation-delay: 0.44s;
-  box-shadow: 0 0 26px rgba(102, 224, 207, 0.5);
+  box-shadow: 0 0 26px rgba(0, 191, 165, 0.55);
 }
 .sr-intro-word {
   margin-top: 14px;

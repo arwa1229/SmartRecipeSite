@@ -1,6 +1,7 @@
 ---
-// Brand wordmark per Guidelines v1.0: "SMART RECIP" + bar-mark "E",
-// with the "IT COMPANY" descriptor beneath. Wordmark stays Latin on all locales.
+// Brand wordmark per the official reverse lockup: "SMΛRT RECIP" (crossbar-less A)
+// ending in the spoon mark — teal dash, white dot + dash, teal dash — with the
+// "IT COMPANY" descriptor beneath. Wordmark stays Latin on all locales.
 interface Props {
   /** 'light' = charcoal text (light backgrounds), 'dark' = white text */
   variant?: 'light' | 'dark';
@@ -8,31 +9,38 @@ interface Props {
   class?: string;
 }
 
-const { variant = 'light', tagline = true, class: className } = Astro.props;
+const { variant = 'dark', tagline = true, class: className } = Astro.props;
 const textColor = variant === 'dark' ? 'text-white' : 'text-ink';
+const spoonColor = variant === 'dark' ? '#F2F5F4' : '#111111';
 ---
 
-<span class:list={['inline-flex flex-col items-center', className]} dir="ltr">
+<span
+  class:list={['inline-flex flex-col items-center', className]}
+  dir="ltr"
+  role="img"
+  aria-label="Smart Recipe — IT Company"
+>
   <span
+    aria-hidden="true"
     class:list={[
-      'font-heading inline-flex items-center text-[1.3rem] leading-none font-semibold tracking-[0.14em]',
+      'font-heading inline-flex items-center text-[1.35rem] leading-none font-medium tracking-[0.16em]',
       textColor,
     ]}
-    aria-label="Smart Recipe"
   >
-    SMART&nbsp;RECIP<svg
-      viewBox="0 0 26 26"
-      class="ms-[0.1em] h-[0.78em] w-auto"
+    SMΛRT&nbsp;RECIP<svg
+      viewBox="0 0 30 30"
+      class="ms-[0.14em] h-[0.84em] w-auto"
       aria-hidden="true"
     >
-      <rect x="0" y="2" width="26" height="6" rx="3" fill="#00BFA5"></rect>
-      <rect x="0" y="11" width="26" height="6" rx="3" fill="#00BFA5"></rect>
-      <rect x="0" y="20" width="26" height="6" rx="3" fill="#66E0CF"></rect>
+      <rect x="0" y="1" width="30" height="6" rx="3" fill="#00BFA5"></rect>
+      <circle cx="3.5" cy="15" r="3.5" fill={spoonColor}></circle>
+      <rect x="10" y="12" width="20" height="6" rx="3" fill={spoonColor}></rect>
+      <rect x="0" y="23" width="30" height="6" rx="3" fill="#00BFA5"></rect>
     </svg>
   </span>
   {
     tagline && (
-      <span class="text-brand mt-1 text-[0.55rem] leading-none font-medium tracking-[0.5em]">
+      <span class="text-brand mt-1.5 text-[0.55rem] leading-none font-medium tracking-[0.5em]">
         IT&nbsp;COMPANY
       </span>
     )

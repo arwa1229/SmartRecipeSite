@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneMockup from '../components/PhoneMockup.astro';
+import MartinMark from '../components/MartinMark.astro';
 import { localePath, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -17,6 +18,8 @@ const products = [
     tag: t('products.martin.tag'),
     body: t('products.martin.body'),
     float: 'float-slow',
+    href: undefined as string | undefined,
+    linkLabel: undefined as string | undefined,
   },
   {
     app: 'yellga' as const,
@@ -24,6 +27,8 @@ const products = [
     tag: t('products.yellga.tag'),
     body: t('products.yellga.body'),
     float: 'float-slower',
+    href: 'https://yelga.ai',
+    linkLabel: 'yelga.ai',
   },
 ];
 
@@ -149,7 +154,7 @@ const whyItems = [
           <span class="bg-fg size-3 rounded-full"></span>
           <span class="bg-fg h-1.5 w-11 rounded-full"></span>
         </span>
-        <span class="bg-brand-light h-1.5 w-16 rounded-full"></span>
+        <span class="bg-brand h-1.5 w-16 rounded-full"></span>
       </div>
     </div>
   </section>
@@ -195,28 +200,57 @@ const whyItems = [
 
       <div class="mt-14 grid gap-8 md:grid-cols-2">
         {
-          products.map((product, i) => (
-            <article
-              class="reveal group bg-surface relative overflow-hidden rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00bfa5]/40 hover:shadow-[0_0_60px_-15px_rgba(0,191,165,0.4)] sm:p-10"
-              style={`--d: ${i * 0.15}s`}
-            >
-              <div
-                class="bg-brand/10 absolute -top-16 -end-16 size-48 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                aria-hidden="true"
-              />
-              <div
-                class="flex justify-center"
-                data-parallax={i === 0 ? '-0.035' : '-0.055'}
+          products.map((product, i) => {
+            const Tag = product.href ? 'a' : 'article';
+            const linkAttrs = product.href
+              ? { href: product.href, target: '_blank', rel: 'noopener' }
+              : {};
+            return (
+              <Tag
+                {...linkAttrs}
+                class="reveal group bg-surface relative block overflow-hidden rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00bfa5]/40 hover:shadow-[0_0_60px_-15px_rgba(0,191,165,0.4)] sm:p-10"
+                style={`--d: ${i * 0.15}s`}
               >
-                <PhoneMockup app={product.app} class={product.float} />
-              </div>
-              <h3 class="font-heading mt-8 text-2xl font-bold">
-                {product.name}
-              </h3>
-              <p class="text-brand-light mt-1.5 font-medium">{product.tag}</p>
-              <p class="text-muted mt-4 leading-relaxed">{product.body}</p>
-            </article>
-          ))
+                <div
+                  class="bg-brand/10 absolute -top-16 -end-16 size-48 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <div
+                  class="flex justify-center"
+                  data-parallax={i === 0 ? '-0.035' : '-0.055'}
+                >
+                  <PhoneMockup app={product.app} class={product.float} />
+                </div>
+                <div class="mt-8 flex items-center gap-3">
+                  {product.app === 'martin' && (
+                    <MartinMark class="text-fg h-9" />
+                  )}
+                  <h3 class="font-heading text-2xl font-bold">
+                    {product.name}
+                  </h3>
+                  {product.linkLabel && (
+                    <span class="text-brand-light ms-auto inline-flex items-center gap-1.5 text-sm font-medium">
+                      {product.linkLabel}
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M7 17L17 7M9 7h8v8" />
+                      </svg>
+                    </span>
+                  )}
+                </div>
+                <p class="text-brand-light mt-1.5 font-medium">{product.tag}</p>
+                <p class="text-muted mt-4 leading-relaxed">{product.body}</p>
+              </Tag>
+            );
+          })
         }
       </div>
     </div>
