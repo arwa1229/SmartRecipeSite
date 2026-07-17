@@ -76,6 +76,7 @@ export const ui = {
 
     'footer.slogan': 'The recipe for a smarter life.',
     'footer.rights': 'All rights reserved.',
+    'footer.cr': 'Commercial Registration No. 7004397498',
   },
   ar: {
     'site.name': 'الوصفة الذكية',
@@ -142,6 +143,7 @@ export const ui = {
 
     'footer.slogan': 'وصفتك لحياة أذكى.',
     'footer.rights': 'جميع الحقوق محفوظة.',
+    'footer.cr': 'السجل التجاري رقم 7004397498',
   },
 } as const;
 
