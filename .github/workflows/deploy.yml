@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Deploys from main and from the active development branch so the site
+# stays live while it is being built out.
 on:
   push:
-    branches: [main]
+    branches: [main, claude/smart-recipe-website-3bykq7]
   workflow_dispatch:
 
 permissions:
@@ -19,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/setup-node@v4
         with:
           node-version: 22
