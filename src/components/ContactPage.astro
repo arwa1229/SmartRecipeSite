@@ -72,6 +72,18 @@ const t = useTranslations(locale);
             />
           </div>
           <div>
+            <label for="phone" class="mb-1.5 block text-sm font-semibold">
+              {t('contact.form.phone')}
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              dir="ltr"
+              class="bg-night text-fg focus:border-brand focus:ring-brand/25 w-full rounded-xl border border-white/10 px-4 py-3 transition-colors outline-none focus:ring-2"
+            />
+          </div>
+          <div>
             <label for="message" class="mb-1.5 block text-sm font-semibold">
               {t('contact.form.message')}
             </label>
