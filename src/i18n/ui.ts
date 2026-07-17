@@ -67,8 +67,10 @@ export const ui = {
     'contact.form.phone': 'Phone number',
     'contact.form.message': 'Your message',
     'contact.form.submit': 'Send message',
+    'contact.form.success':
+      'Thank you! Your message has been sent — we will get back to you soon.',
     'contact.info.title': 'Contact information',
-    'contact.info.email': 'info@example.com',
+    'contact.info.email': 'arwa@martin.live',
     'contact.info.phone': '+000 000 0000',
     'contact.info.address': 'City, Country',
 
@@ -131,8 +133,10 @@ export const ui = {
     'contact.form.phone': 'رقم الهاتف',
     'contact.form.message': 'رسالتك',
     'contact.form.submit': 'إرسال الرسالة',
+    'contact.form.success':
+      'شكراً لك! تم إرسال رسالتك — سنعاود التواصل معك قريباً.',
     'contact.info.title': 'معلومات التواصل',
-    'contact.info.email': 'info@example.com',
+    'contact.info.email': 'arwa@martin.live',
     'contact.info.phone': '+000 000 0000',
     'contact.info.address': 'المدينة، الدولة',
 
