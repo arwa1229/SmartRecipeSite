@@ -27,20 +27,23 @@ npm run build    # production build to dist/
 
 ## Deployment (GitHub Pages)
 
-1. In the repository settings, set **Pages → Source** to **GitHub Actions**.
-2. Merge to `main` — the workflow builds and deploys automatically.
-3. The site is served at `https://arwa1229.github.io/SmartRecipeSite/`.
+The deploy workflow builds the site and publishes `dist/` to the `gh-pages`
+branch (with `CNAME` for the custom domain) on every push to `main` or the
+active development branch. GitHub Pages serves that branch.
 
-### Connecting the custom domain
+**Live site:** https://smartrecipe.co
 
-When ready to point the domain here:
+### DNS records (at the domain registrar)
 
-1. Add the domain under **Settings → Pages → Custom domain** (this creates a
-   `CNAME` file).
-2. Point the domain's DNS at GitHub Pages (CNAME record to
-   `arwa1229.github.io`, or A records for an apex domain).
-3. Set the env vars for the build in `.github/workflows/deploy.yml`:
-   `SITE_URL=https://yourdomain.com` and `SITE_BASE=/` (see `astro.config.mjs`).
+| Type | Host | Value |
+|------|------|-------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `arwa1229.github.io` |
+
+After DNS propagates, enable **Enforce HTTPS** in Settings → Pages.
 
 ## Pending content
 

@@ -2,10 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// GitHub Pages project-site defaults. Once the custom domain is connected,
-// set SITE_URL to the domain and SITE_BASE to "/" (or add a CNAME file).
-const site = process.env.SITE_URL ?? 'https://arwa1229.github.io';
-const base = process.env.SITE_BASE ?? '/SmartRecipeSite';
+// Custom domain via GitHub Pages (CNAME published by the deploy workflow).
+const site = process.env.SITE_URL ?? 'https://smartrecipe.co';
+const base = process.env.SITE_BASE ?? '/';
 
 export default defineConfig({
   site,
