@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Flow">
+  <defs>
+    <linearGradient id="r43g" x1="24" y1="40" x2="96" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <!-- A quiet signal: layered waves -->
+  <g transform="translate(10 10)">
+    <path d="M24 55 C36 33 48 33 60 55 C72 77 84 77 96 55" fill="none" stroke="url(#r43g)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M24 76 C36 54 48 54 60 76 C72 98 84 98 96 76" fill="none" stroke="url(#r43g)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  </g>
+  <text x="150" y="86" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="52" font-weight="600" letter-spacing="-1" fill="#0F172A">Smart<tspan font-weight="300"> Recipe</tspan></text>
+  <text x="152" y="114" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="14" font-weight="400" letter-spacing="7" fill="#94A3B8">IT SOLUTIONS</text>
+</svg>

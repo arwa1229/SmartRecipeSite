@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Ripple">
+  <defs>
+    <linearGradient id="r44g" x1="30" y1="94" x2="94" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- Ripples expanding from one point: impact that grows -->
+  <g transform="translate(10 10)">
+    <circle cx="36" cy="88" r="5" fill="url(#r44g)"/>
+    <path d="M56 88 A20 20 0 0 0 36 68" fill="none" stroke="url(#r44g)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M72 88 A36 36 0 0 0 36 52" fill="none" stroke="url(#r44g)" stroke-width="5.5" stroke-linecap="round" opacity="0.75"/>
+    <path d="M88 88 A52 52 0 0 0 36 36" fill="none" stroke="url(#r44g)" stroke-width="5.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <text x="150" y="86" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="52" font-weight="600" letter-spacing="-1" fill="#0F172A">Smart<tspan font-weight="300"> Recipe</tspan></text>
+  <text x="152" y="114" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="14" font-weight="400" letter-spacing="7" fill="#94A3B8">IT SOLUTIONS</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Aperture">
+  <defs>
+    <linearGradient id="r41g" x1="24" y1="26" x2="96" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <!-- Open circle of two arcs with orbiting dots -->
+  <g transform="translate(10 10)">
+    <path d="M53.7 26.5 A36 36 0 0 1 91.2 80" fill="none" stroke="url(#r41g)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M66.3 97.5 A36 36 0 0 1 28.8 44" fill="none" stroke="url(#r41g)" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="39.4" cy="32.5" r="4.5" fill="url(#r41g)"/>
+    <circle cx="80.6" cy="91.5" r="4.5" fill="url(#r41g)"/>
+  </g>
+  <text x="150" y="86" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="52" font-weight="600" letter-spacing="-1" fill="#0F172A">Smart<tspan font-weight="300"> Recipe</tspan></text>
+  <text x="152" y="114" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="14" font-weight="400" letter-spacing="7" fill="#94A3B8">IT SOLUTIONS</text>
+</svg>

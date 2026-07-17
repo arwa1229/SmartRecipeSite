@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Union">
+  <defs>
+    <linearGradient id="r42g" x1="20" y1="36" x2="100" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <!-- Two circles meeting: client and company, idea and execution -->
+  <g transform="translate(10 10)">
+    <circle cx="46" cy="62" r="26" fill="none" stroke="url(#r42g)" stroke-width="5.5"/>
+    <circle cx="74" cy="62" r="26" fill="none" stroke="url(#r42g)" stroke-width="5.5"/>
+  </g>
+  <text x="150" y="86" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="52" font-weight="600" letter-spacing="-1" fill="#0F172A">Smart<tspan font-weight="300"> Recipe</tspan></text>
+  <text x="152" y="114" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="14" font-weight="400" letter-spacing="7" fill="#94A3B8">IT SOLUTIONS</text>
+</svg>
