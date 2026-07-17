@@ -1,0 +1,50 @@
+---
+// Yelga wordmark recreated from the official logo: the lowercase "y" is a
+// green checkmark whose descender tail is dark (rendered in currentColor
+// so it stays visible on dark surfaces), followed by "elga".
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span
+  class:list={['inline-flex items-baseline', className]}
+  role="img"
+  aria-label="Yelga"
+  dir="ltr"
+>
+  <svg
+    viewBox="0 0 118 132"
+    class="h-[1.06em] w-auto translate-y-[0.18em]"
+    aria-hidden="true"
+  >
+    <line
+      x1="22"
+      y1="56"
+      x2="58"
+      y2="98"
+      stroke="#4A8F76"
+      stroke-width="23"></line>
+    <line
+      x1="104"
+      y1="10"
+      x2="55"
+      y2="101"
+      stroke="#4A8F76"
+      stroke-width="23"></line>
+    <line
+      x1="57"
+      y1="97"
+      x2="38"
+      y2="128"
+      stroke="currentColor"
+      stroke-width="23"></line>
+  </svg>
+  <span
+    aria-hidden="true"
+    class="font-sans leading-none font-medium tracking-tight lowercase"
+    >elga</span
+  >
+</span>

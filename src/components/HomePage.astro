@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneMockup from '../components/PhoneMockup.astro';
 import MartinMark from '../components/MartinMark.astro';
+import YelgaLogo from '../components/YelgaLogo.astro';
 import { localePath, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -219,15 +220,37 @@ const whyItems = [
                   class="flex justify-center"
                   data-parallax={i === 0 ? '-0.035' : '-0.055'}
                 >
-                  <PhoneMockup app={product.app} class={product.float} />
+                  <span
+                    class:list={[
+                      'inline-block',
+                      product.app === 'yelga' &&
+                        '-rotate-3 transition-transform duration-500 group-hover:rotate-0',
+                    ]}
+                  >
+                    <PhoneMockup
+                      app={product.app}
+                      class={`${product.float} ${
+                        product.app === 'yelga'
+                          ? 'drop-shadow-[0_0_38px_rgba(74,143,118,0.45)]'
+                          : ''
+                      }`}
+                    />
+                  </span>
                 </div>
                 <div class="mt-8 flex items-center gap-3">
                   {product.app === 'martin' && (
                     <MartinMark class="text-fg h-9" />
                   )}
-                  <h3 class="font-heading text-2xl font-bold">
-                    {product.name}
-                  </h3>
+                  {product.app === 'yelga' ? (
+                    <h3 class="text-fg text-2xl">
+                      <span class="sr-only">{product.name}</span>
+                      <YelgaLogo class="text-[1.6em]" />
+                    </h3>
+                  ) : (
+                    <h3 class="font-heading text-2xl font-bold">
+                      {product.name}
+                    </h3>
+                  )}
                   {product.linkLabel && (
                     <span class="text-brand-light ms-auto inline-flex items-center gap-1.5 text-sm font-medium">
                       {product.linkLabel}
