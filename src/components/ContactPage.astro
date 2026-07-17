@@ -23,8 +23,8 @@ const t = useTranslations(locale);
       aria-hidden="true"
     >
     </div>
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <div class="max-w-2xl">
+    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="text-center">
         <h1
           class="hero-in font-heading text-4xl font-bold tracking-tight sm:text-5xl"
         >
@@ -35,7 +35,7 @@ const t = useTranslations(locale);
         </p>
       </div>
 
-      <div class="mt-12 grid gap-10 lg:grid-cols-5">
+      <div class="mt-12">
         <!--
           Static site: the form needs a form-backend service to actually deliver
           messages. Replace FORM_ENDPOINT with e.g. a Formspree endpoint
@@ -44,7 +44,7 @@ const t = useTranslations(locale);
         <form
           action="FORM_ENDPOINT"
           method="POST"
-          class="hero-in bg-surface space-y-5 rounded-3xl border border-white/5 p-8 lg:col-span-3"
+          class="hero-in bg-surface space-y-5 rounded-3xl border border-white/5 p-8 sm:p-10"
           style="--d: 0.2s"
         >
           <div>
@@ -90,39 +90,6 @@ const t = useTranslations(locale);
             {t('contact.form.submit')}
           </button>
         </form>
-
-        <div class="hero-in lg:col-span-2" style="--d: 0.3s">
-          <div
-            class="bg-surface-2 rounded-3xl border border-white/5 p-8"
-          >
-            <h2 class="font-heading text-xl font-bold">
-              {t('contact.info.title')}
-            </h2>
-            <ul class="mt-6 space-y-4 text-white/70">
-              <li class="flex items-center gap-3">
-                <span class="bg-brand inline-block h-1.5 w-5 shrink-0 rounded-full"></span>
-                <a
-                  href={`mailto:${t('contact.info.email')}`}
-                  class="hover:text-brand-light transition-colors"
-                  dir="ltr"
-                >
-                  {t('contact.info.email')}
-                </a>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="bg-brand-light inline-block h-1.5 w-5 shrink-0 rounded-full"></span>
-                <span dir="ltr">{t('contact.info.phone')}</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="bg-fg/60 inline-block h-1.5 w-5 shrink-0 rounded-full"></span>
-                <span>{t('contact.info.address')}</span>
-              </li>
-            </ul>
-            <p class="text-brand-light mt-8 text-sm font-medium">
-              {t('site.tagline')}
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </section>

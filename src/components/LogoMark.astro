@@ -1,0 +1,21 @@
+---
+// Icon-only brand mark per Guidelines v1.0: teal bar, dot + bar, light teal bar
+// (same construction as the app icon, without the dark square).
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 100 72"
+  class:list={['h-12 w-auto', className]}
+  role="img"
+  aria-label="Smart Recipe"
+>
+  <rect x="0" y="0" width="100" height="14" rx="7" fill="#00BFA5"></rect>
+  <circle cx="8" cy="36" r="8" fill="#F2F5F4"></circle>
+  <rect x="22" y="29" width="78" height="14" rx="7" fill="#F2F5F4"></rect>
+  <rect x="0" y="58" width="100" height="14" rx="7" fill="#66E0CF"></rect>
+</svg>

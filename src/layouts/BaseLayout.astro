@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Logo from '../components/Logo.astro';
+import LogoMark from '../components/LogoMark.astro';
 import { dirFor, localePath, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -106,9 +107,10 @@ const sectionLinks = [
 
     <footer class="mt-24 border-t border-white/5 bg-black/40">
       <div
-        class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 text-center sm:px-6"
+        class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6"
       >
-        <Logo variant="dark" />
+        <LogoMark class="h-16" />
+        <Logo variant="dark" class="scale-110" />
         <p class="text-brand-light text-sm font-medium">
           {t('site.name')} — {t('footer.slogan')}
         </p>
