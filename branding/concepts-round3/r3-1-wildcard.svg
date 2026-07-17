@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Wildcard">
+  <defs>
+    <linearGradient id="r31g" x1="20" y1="20" x2="100" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- The * wildcard: the code symbol for "anything" -->
+  <g transform="translate(10 10)">
+    <path d="M60 48 V22 M72.1 55 L94.6 42 M72.1 69 L94.6 82 M60 76 V102 M47.9 69 L25.4 82 M47.9 55 L25.4 42" fill="none" stroke="url(#r31g)" stroke-width="11" stroke-linecap="round"/>
+    <circle cx="60" cy="62" r="5.5" fill="#0F172A"/>
+  </g>
+  <text x="150" y="88" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#0F172A">Smart<tspan fill="#0891B2"> Recipe</tspan></text>
+  <text x="152" y="116" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Pixel S">
+  <defs>
+    <linearGradient id="r33g" x1="36" y1="30" x2="84" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <!-- S rendered in data dots: digital by nature -->
+  <g transform="translate(10 10)" fill="url(#r33g)">
+    <circle cx="52" cy="30" r="6"/><circle cx="68" cy="30" r="6"/><circle cx="84" cy="30" r="6"/>
+    <circle cx="36" cy="46" r="6"/>
+    <circle cx="52" cy="62" r="6"/><circle cx="68" cy="62" r="6"/>
+    <circle cx="84" cy="78" r="6"/>
+    <circle cx="36" cy="94" r="6"/><circle cx="52" cy="94" r="6"/><circle cx="68" cy="94" r="6"/>
+  </g>
+  <text x="150" y="88" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#0F172A">Smart<tspan fill="#A21CAF"> Recipe</tspan></text>
+  <text x="152" y="116" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>

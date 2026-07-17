@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Terminal wordmark">
+  <defs>
+    <linearGradient id="r34g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <!-- Pure wordmark, written like a command line -->
+  <text x="60" y="80" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="58" font-weight="800" letter-spacing="-2" fill="#0F172A"><tspan fill="url(#r34g)">&gt;</tspan> smartrecipe<tspan fill="url(#r34g)">_</tspan></text>
+  <text x="98" y="112" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>
