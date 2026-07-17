@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — AI Recipe Card">
+  <defs>
+    <linearGradient id="c4g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <!-- Recipe card with an AI spark -->
+  <g transform="translate(10 10)">
+    <rect x="34" y="22" width="50" height="74" rx="11" fill="none" stroke="#0F172A" stroke-width="7"/>
+    <path d="M47 42 H71 M47 54 H71 M47 66 H60" fill="none" stroke="#0F172A" stroke-width="5.5" stroke-linecap="round" opacity="0.45"/>
+    <path d="M79 58 L83.5 71.5 L97 76 L83.5 80.5 L79 94 L74.5 80.5 L61 76 L74.5 71.5 Z" fill="url(#c4g)"/>
+    <circle cx="92" cy="56" r="3.8" fill="url(#c4g)"/>
+  </g>
+  <text x="150" y="88" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#0F172A">Smart<tspan fill="url(#c4g)"> Recipe</tspan></text>
+  <text x="152" y="116" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>
