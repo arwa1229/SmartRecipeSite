@@ -1,0 +1,82 @@
+---
+// Stylized skeleton-UI phone mockups for the product cards.
+// Placeholder art until real app screenshots are available.
+interface Props {
+  app: 'martin' | 'yellga';
+  class?: string;
+}
+
+const { app, class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 220 440"
+  class:list={['h-auto w-full max-w-[200px] drop-shadow-xl', className]}
+  aria-hidden="true"
+>
+  <rect x="4" y="4" width="212" height="432" rx="34" fill="#111111"></rect>
+  <rect x="12" y="12" width="196" height="416" rx="27" fill="#FFFFFF"></rect>
+  <rect x="86" y="22" width="48" height="8" rx="4" fill="#111111"></rect>
+
+  {
+    app === 'martin' ? (
+      <>
+        {/* Martin — assistant chat skeleton */}
+        <rect x="28" y="52" width="80" height="12" rx="6" fill="#111111" />
+        <rect x="28" y="72" width="52" height="8" rx="4" fill="#D7DBDA" />
+        <rect x="28" y="102" width="118" height="40" rx="14" fill="#EFF2F1" />
+        <rect x="40" y="114" width="82" height="7" rx="3.5" fill="#9AA5A2" />
+        <rect x="40" y="126" width="60" height="7" rx="3.5" fill="#C6CCCA" />
+        <rect x="74" y="158" width="118" height="52" rx="14" fill="#00BFA5" />
+        <rect x="86" y="170" width="84" height="7" rx="3.5" fill="#FFFFFF" opacity="0.9" />
+        <rect x="86" y="182" width="66" height="7" rx="3.5" fill="#FFFFFF" opacity="0.65" />
+        <rect x="86" y="194" width="44" height="7" rx="3.5" fill="#FFFFFF" opacity="0.65" />
+        <rect x="28" y="226" width="98" height="40" rx="14" fill="#EFF2F1" />
+        <rect x="40" y="238" width="66" height="7" rx="3.5" fill="#9AA5A2" />
+        <rect x="40" y="250" width="42" height="7" rx="3.5" fill="#C6CCCA" />
+        {/* reminder card */}
+        <rect x="28" y="288" width="164" height="58" rx="14" fill="#FFFFFF" stroke="#E3E8E6" />
+        <circle cx="48" cy="317" r="10" fill="#66E0CF" />
+        <path d="M44 317l3 3 6-6" stroke="#111111" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        <rect x="66" y="304" width="96" height="8" rx="4" fill="#111111" />
+        <rect x="66" y="320" width="68" height="7" rx="3.5" fill="#C6CCCA" />
+        {/* input bar */}
+        <rect x="28" y="376" width="164" height="34" rx="17" fill="#EFF2F1" />
+        <rect x="44" y="389" width="88" height="8" rx="4" fill="#C6CCCA" />
+        <circle cx="175" cy="393" r="12" fill="#00BFA5" />
+        <path d="M175 388v7m0 0l-3-3m3 3l3-3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 175 391.5)" />
+      </>
+    ) : (
+      <>
+        {/* Yellga — smart search skeleton */}
+        <rect x="28" y="52" width="80" height="12" rx="6" fill="#111111" />
+        <rect x="28" y="72" width="52" height="8" rx="4" fill="#D7DBDA" />
+        {/* search pill echoing the brand slider mark */}
+        <rect x="28" y="96" width="164" height="38" rx="19" fill="#111111" />
+        <circle cx="49" cy="115" r="9" fill="#00BFA5" />
+        <rect x="64" y="111" width="82" height="8" rx="4" fill="#FFFFFF" opacity="0.55" />
+        <circle cx="172" cy="115" r="10" fill="#66E0CF" />
+        <path d="M170 111a5 5 0 1 1-1 8m-1-2l-4 5" stroke="#111111" stroke-width="2" fill="none" stroke-linecap="round" />
+        {/* result cards */}
+        <rect x="28" y="152" width="164" height="64" rx="14" fill="#FFFFFF" stroke="#E3E8E6" />
+        <rect x="42" y="166" width="34" height="34" rx="10" fill="#66E0CF" />
+        <rect x="88" y="168" width="90" height="9" rx="4.5" fill="#111111" />
+        <rect x="88" y="184" width="72" height="7" rx="3.5" fill="#9AA5A2" />
+        <rect x="88" y="196" width="52" height="7" rx="3.5" fill="#C6CCCA" />
+        <rect x="28" y="226" width="164" height="64" rx="14" fill="#FFFFFF" stroke="#E3E8E6" />
+        <rect x="42" y="240" width="34" height="34" rx="10" fill="#00BFA5" />
+        <rect x="88" y="242" width="80" height="9" rx="4.5" fill="#111111" />
+        <rect x="88" y="258" width="88" height="7" rx="3.5" fill="#9AA5A2" />
+        <rect x="88" y="270" width="46" height="7" rx="3.5" fill="#C6CCCA" />
+        <rect x="28" y="300" width="164" height="64" rx="14" fill="#FFFFFF" stroke="#E3E8E6" />
+        <rect x="42" y="314" width="34" height="34" rx="10" fill="#EFF2F1" />
+        <rect x="88" y="316" width="86" height="9" rx="4.5" fill="#111111" />
+        <rect x="88" y="332" width="64" height="7" rx="3.5" fill="#9AA5A2" />
+        <rect x="88" y="344" width="56" height="7" rx="3.5" fill="#C6CCCA" />
+        {/* answer chip */}
+        <rect x="52" y="384" width="116" height="26" rx="13" fill="#00BFA5" />
+        <rect x="72" y="393" width="76" height="8" rx="4" fill="#FFFFFF" opacity="0.9" />
+      </>
+    )
+  }
+</svg>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PhoneMockup from '../components/PhoneMockup.astro';
 import { localePath, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -9,67 +10,228 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const services = [
-  { title: t('services.1.title'), body: t('services.1.body') },
-  { title: t('services.2.title'), body: t('services.2.body') },
-  { title: t('services.3.title'), body: t('services.3.body') },
+const products = [
+  {
+    app: 'martin' as const,
+    name: t('products.martin.name'),
+    tag: t('products.martin.tag'),
+    body: t('products.martin.body'),
+    float: 'float-slow',
+  },
+  {
+    app: 'yellga' as const,
+    name: t('products.yellga.name'),
+    tag: t('products.yellga.tag'),
+    body: t('products.yellga.body'),
+    float: 'float-slower',
+  },
+];
+
+const whyItems = [
+  { title: t('why.1.title'), body: t('why.1.body'), icon: 'chip' },
+  { title: t('why.2.title'), body: t('why.2.body'), icon: 'shape' },
+  { title: t('why.3.title'), body: t('why.3.body'), icon: 'bolt' },
 ];
 ---
 
 <BaseLayout locale={locale} currentPath="/">
-  <!-- Hero -->
+  <!-- ============ Hero ============ -->
   <section class="relative overflow-hidden">
-    <div class="brand-gradient absolute inset-x-0 top-0 -z-10 h-full opacity-[0.06]"></div>
-    <div class="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-28">
-      <p class="mb-4 text-sm font-semibold tracking-widest text-brand-dark uppercase">
-        {t('site.tagline')}
+    <div
+      class="blob bg-brand-light/25 absolute -top-24 -end-24 -z-10 size-96 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="blob bg-brand/15 absolute top-48 -start-32 -z-10 size-105 rounded-full blur-3xl"
+      style="animation-delay: -8s"
+    >
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 pt-20 pb-24 text-center sm:px-6 sm:pt-28 sm:pb-32">
+      <p
+        class="hero-in text-brand-deep font-heading text-sm font-semibold tracking-[0.35em] uppercase"
+      >
+        {t('hero.eyebrow')}
       </p>
-      <h1 class="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-balance sm:text-6xl">
-        {t('hero.title')}
+      <h1
+        class="hero-in font-heading mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-6xl"
+        style="--d: 0.12s"
+      >
+        {t('hero.title.pre')}<span class="text-brand-deep relative inline-block"
+          >{t('hero.title.accent')}<svg
+            viewBox="0 0 120 14"
+            class="absolute -bottom-2 start-0 w-full"
+            aria-hidden="true"
+            ><rect x="0" y="2" width="120" height="5" rx="2.5" fill="#66E0CF"
+            ></rect></svg
+          ></span
+        >{t('hero.title.post')}
       </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-brand">
-        {t('hero.subtitle')}
+      <p
+        class="hero-in text-muted mx-auto mt-8 max-w-2xl text-lg sm:text-xl"
+        style="--d: 0.24s"
+      >
+        {t('hero.body')}
       </p>
-      <div class="mt-10">
+      <div
+        class="hero-in mt-10 flex flex-wrap items-center justify-center gap-4"
+        style="--d: 0.36s"
+      >
         <a
-          href={localePath(locale, '/contact')}
-          class="brand-gradient inline-block rounded-xl px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105"
+          href="#products"
+          class="bg-ink hover:bg-brand hover:text-ink rounded-full px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105"
         >
           {t('hero.cta')}
         </a>
+        <a
+          href={localePath(locale, '/contact')}
+          class="text-ink hover:border-brand hover:text-brand-deep rounded-full border border-black/10 bg-white px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105"
+        >
+          {t('hero.ctaSecondary')}
+        </a>
+      </div>
+
+      <!-- brand bar-mark motif -->
+      <div
+        class="hero-in mx-auto mt-16 flex w-fit flex-col gap-2"
+        style="--d: 0.5s"
+        aria-hidden="true"
+      >
+        <span class="bg-brand h-1.5 w-16 rounded-full"></span>
+        <span class="flex items-center gap-2">
+          <span class="bg-ink size-3 rounded-full"></span>
+          <span class="bg-ink h-1.5 w-11 rounded-full"></span>
+        </span>
+        <span class="bg-brand-light h-1.5 w-16 rounded-full"></span>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold sm:text-4xl">{t('services.title')}</h2>
-      <p class="mt-3 text-slate-brand">{t('services.subtitle')}</p>
-    </div>
-    <div class="mt-12 grid gap-6 sm:grid-cols-3">
-      {
-        services.map((service) => (
-          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-            <div class="brand-gradient mb-5 h-1.5 w-12 rounded-full" />
-            <h3 class="text-xl font-bold">{service.title}</h3>
-            <p class="mt-3 text-slate-brand">{service.body}</p>
-          </div>
-        ))
-      }
+  <!-- ============ About ============ -->
+  <section id="about" class="scroll-mt-20 bg-white py-20 sm:py-28">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12">
+      <div class="reveal lg:col-span-4">
+        <h2 class="font-heading text-3xl font-bold sm:text-4xl">
+          {t('about.title')}
+        </h2>
+        <div class="mt-5 flex flex-col gap-1.5" aria-hidden="true">
+          <span class="bg-brand h-1 w-12 rounded-full"></span>
+          <span class="bg-brand-light h-1 w-8 rounded-full"></span>
+        </div>
+      </div>
+      <p
+        class="reveal text-muted text-lg leading-relaxed sm:text-xl lg:col-span-8"
+        style="--d: 0.15s"
+      >
+        {t('about.body')}
+      </p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-    <div class="brand-gradient rounded-3xl px-6 py-16 text-center text-white sm:px-12">
-      <h2 class="text-3xl font-bold sm:text-4xl">{t('cta.title')}</h2>
-      <p class="mx-auto mt-4 max-w-xl text-white/85">{t('cta.body')}</p>
+  <!-- ============ Products ============ -->
+  <section id="products" class="scroll-mt-20 py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <h2 class="font-heading text-3xl font-bold sm:text-4xl">
+          {t('products.title')}
+        </h2>
+        <p class="text-muted mt-4 text-lg">{t('products.subtitle')}</p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-2">
+        {
+          products.map((product, i) => (
+            <article
+              class="reveal group relative overflow-hidden rounded-3xl border border-black/5 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:p-10"
+              style={`--d: ${i * 0.15}s`}
+            >
+              <div
+                class="bg-brand-light/20 absolute -top-16 -end-16 size-48 rounded-full blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0"
+                aria-hidden="true"
+              />
+              <div class="flex justify-center">
+                <PhoneMockup app={product.app} class={product.float} />
+              </div>
+              <h3 class="font-heading mt-8 text-2xl font-bold">
+                {product.name}
+              </h3>
+              <p class="text-brand-deep mt-1.5 font-medium">{product.tag}</p>
+              <p class="text-muted mt-4 leading-relaxed">{product.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Why Smart Recipe ============ -->
+  <section id="why" class="scroll-mt-20 bg-white py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="reveal font-heading text-center text-3xl font-bold sm:text-4xl">
+        {t('why.title')}
+      </h2>
+      <div class="mt-14 grid gap-6 sm:grid-cols-3">
+        {
+          whyItems.map((item, i) => (
+            <div
+              class="reveal bg-offwhite rounded-3xl border border-black/5 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              style={`--d: ${i * 0.15}s`}
+            >
+              <span class="bg-brand/10 text-brand-deep inline-flex size-12 items-center justify-center rounded-2xl">
+                {item.icon === 'chip' && (
+                  <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="5" y="5" width="14" height="14" rx="3" />
+                    <rect x="9.5" y="9.5" width="5" height="5" rx="1.5" />
+                    <path d="M9 5V2m6 3V2M9 22v-3m6 3v-3M5 9H2m3 6H2m20-6h-3m3 6h-3" />
+                  </svg>
+                )}
+                {item.icon === 'shape' && (
+                  <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                    <path d="M4 7h16M4 12h10M4 17h13" />
+                    <circle cx="19" cy="17" r="1.4" fill="currentColor" stroke="none" />
+                  </svg>
+                )}
+                {item.icon === 'bolt' && (
+                  <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" />
+                  </svg>
+                )}
+              </span>
+              <h3 class="font-heading mt-5 text-xl font-bold">{item.title}</h3>
+              <p class="text-muted mt-3 leading-relaxed">{item.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Contact CTA ============ -->
+  <section id="contact" class="scroll-mt-20 px-4 py-20 sm:px-6 sm:py-28">
+    <div
+      class="reveal bg-ink relative mx-auto max-w-6xl overflow-hidden rounded-3xl px-6 py-20 text-center text-white sm:px-12"
+    >
+      <div
+        class="blob bg-brand/25 absolute -top-20 -start-20 size-72 rounded-full blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="blob bg-brand-light/20 absolute -bottom-24 -end-16 size-72 rounded-full blur-3xl"
+        style="animation-delay: -6s"
+        aria-hidden="true"
+      >
+      </div>
+      <h2
+        class="font-heading relative mx-auto max-w-2xl text-3xl font-bold text-balance sm:text-5xl"
+      >
+        {t('contact.section.title')}
+      </h2>
       <a
         href={localePath(locale, '/contact')}
-        class="mt-8 inline-block rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-dark transition-transform hover:scale-105"
+        class="bg-brand text-ink hover:bg-brand-light relative mt-10 inline-block rounded-full px-9 py-4 text-base font-semibold transition-all duration-300 hover:scale-105"
       >
-        {t('cta.button')}
+        {t('contact.section.cta')}
       </a>
     </div>
   </section>

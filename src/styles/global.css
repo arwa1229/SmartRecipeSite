@@ -1,42 +1,107 @@
 @import "tailwindcss";
 
 @theme {
-  /* Smart Recipe brand palette — see branding/README.md */
-  --color-brand: #10b981; /* Emerald — primary */
-  --color-brand-dark: #0d9488; /* Teal — gradient end */
-  --color-brand-bright: #34d399; /* Emerald on dark backgrounds */
-  --color-brand-bright-dark: #2dd4bf; /* Teal on dark backgrounds */
-  --color-ink: #0f172a; /* Text and mark */
-  --color-slate-brand: #64748b; /* Secondary text */
+  /* Smart Recipe brand — per Brand Guidelines v1.0 (May 2025) */
+  --color-brand: #00bfa5; /* Smart Teal */
+  --color-brand-light: #66e0cf; /* Light Teal */
+  --color-brand-deep: #009684; /* Darkened teal for text on light bg (AA) */
+  --color-ink: #111111; /* Charcoal / Black */
+  --color-muted: #5b6664; /* Secondary text */
+  --color-offwhite: #fafbfb; /* Page background */
 
-  --font-sans: "Inter", "Noto Sans Arabic", ui-sans-serif, system-ui,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans: "Inter", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", "Tajawal", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Arabic pages get the Arabic-first font stack */
-html[lang="ar"] body {
-  font-family: "Noto Sans Arabic", "Inter", ui-sans-serif, system-ui, sans-serif;
+/* Arabic pages: Tajawal across the board */
+html[lang="ar"] body,
+html[lang="ar"] .font-heading {
+  font-family: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-.brand-gradient {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-brand),
-    var(--color-brand-dark)
-  );
+/* ---------- Motion system ---------- */
+
+/* Scroll-triggered reveal (IntersectionObserver adds .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--d, 0s);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-.brand-gradient-text {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-brand),
-    var(--color-brand-dark)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+/* Hero entrance (plays on load) */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in {
+  animation: rise-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Gentle float for decorative elements & phone mockups */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.float-slow {
+  animation: float-y 7s ease-in-out infinite;
+}
+.float-slower {
+  animation: float-y 9s ease-in-out 1.2s infinite;
+}
+
+/* Drifting background blobs */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -24px) scale(1.06);
+  }
+  66% {
+    transform: translate(-20px, 18px) scale(0.97);
+  }
+}
+.blob {
+  animation: drift 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-in,
+  .float-slow,
+  .float-slower,
+  .blob {
+    animation: none;
+  }
 }

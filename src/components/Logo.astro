@@ -1,0 +1,40 @@
+---
+// Brand wordmark per Guidelines v1.0: "SMART RECIP" + bar-mark "E",
+// with the "IT COMPANY" descriptor beneath. Wordmark stays Latin on all locales.
+interface Props {
+  /** 'light' = charcoal text (light backgrounds), 'dark' = white text */
+  variant?: 'light' | 'dark';
+  tagline?: boolean;
+  class?: string;
+}
+
+const { variant = 'light', tagline = true, class: className } = Astro.props;
+const textColor = variant === 'dark' ? 'text-white' : 'text-ink';
+---
+
+<span class:list={['inline-flex flex-col items-center', className]} dir="ltr">
+  <span
+    class:list={[
+      'font-heading inline-flex items-center text-[1.3rem] leading-none font-semibold tracking-[0.14em]',
+      textColor,
+    ]}
+    aria-label="Smart Recipe"
+  >
+    SMART&nbsp;RECIP<svg
+      viewBox="0 0 26 26"
+      class="ms-[0.1em] h-[0.78em] w-auto"
+      aria-hidden="true"
+    >
+      <rect x="0" y="2" width="26" height="6" rx="3" fill="#00BFA5"></rect>
+      <rect x="0" y="11" width="26" height="6" rx="3" fill="#00BFA5"></rect>
+      <rect x="0" y="20" width="26" height="6" rx="3" fill="#66E0CF"></rect>
+    </svg>
+  </span>
+  {
+    tagline && (
+      <span class="text-brand mt-1 text-[0.55rem] leading-none font-medium tracking-[0.5em]">
+        IT&nbsp;COMPANY
+      </span>
+    )
+  }
+</span>
