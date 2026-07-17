@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Recipe — Logo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #F1F5F9; color: #0F172A; padding: 48px 24px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 28px; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .sub { color: #64748B; margin-bottom: 36px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
+    background: #FFFFFF; border-radius: 16px; padding: 40px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 220px; box-shadow: 0 1px 3px rgba(15,23,42,.08);
+  }
+  .card.dark { background: #0F172A; }
+  .card.full { grid-column: 1 / -1; }
+  .label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #94A3B8; margin: 28px 0 10px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { flex: 1; min-width: 130px; border-radius: 12px; padding: 16px; color: #fff; font-size: 13px; font-weight: 600; }
+  .swatch small { display: block; font-weight: 400; opacity: .85; margin-top: 4px; }
+  img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Smart Recipe — Brand Logo</h1>
+  <p class="sub">A minimal bowl with “smart steam”: steam rising as a connectivity signal — cooking meets technology.</p>
+
+  <div class="label">Primary — horizontal</div>
+  <div class="grid">
+    <div class="card full"><img src="logo-horizontal.svg" alt="Primary logo" width="560"></div>
+  </div>
+
+  <div class="label">Dark background</div>
+  <div class="grid">
+    <div class="card dark full"><img src="logo-horizontal-dark.svg" alt="Dark logo" width="560"></div>
+  </div>
+
+  <div class="label">Stacked · Icon · App icon</div>
+  <div class="grid">
+    <div class="card"><img src="logo-stacked.svg" alt="Stacked logo" width="280"></div>
+    <div class="card" style="gap:40px">
+      <img src="logo-icon.svg" alt="Icon" width="110">
+      <img src="logo-app-icon.svg" alt="App icon" width="110">
+    </div>
+  </div>
+
+  <div class="label">Icon on dark</div>
+  <div class="grid">
+    <div class="card dark full" style="gap:48px">
+      <img src="logo-icon-dark.svg" alt="Icon dark" width="110">
+      <img src="logo-app-icon.svg" alt="App icon" width="110">
+    </div>
+  </div>
+
+  <div class="label">Color palette</div>
+  <div class="swatches">
+    <div class="swatch" style="background:#10B981">Emerald<small>#10B981 · primary</small></div>
+    <div class="swatch" style="background:#0D9488">Teal<small>#0D9488 · gradient end</small></div>
+    <div class="swatch" style="background:#0F172A">Ink<small>#0F172A · text / mark</small></div>
+    <div class="swatch" style="background:#64748B">Slate<small>#64748B · secondary text</small></div>
+  </div>
+</div>
+</body>
+</html>
