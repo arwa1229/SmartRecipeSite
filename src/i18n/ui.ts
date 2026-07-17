@@ -42,10 +42,10 @@ export const ui = {
     'products.martin.tag': 'Your smart assistant, always a step ahead.',
     'products.martin.body':
       'Martin is a personal assistant on your phone that helps you plan, remember, and get things done. Powered by AI, it handles the small tasks and big reminders so you can focus on what matters — making every day more organized, easier, and faster.',
-    'products.yellga.name': 'Yellga',
-    'products.yellga.tag': 'Find anything on the web, instantly.',
-    'products.yellga.body':
-      "Yellga is a smart discovery app that finds what you're looking for across the web in seconds. Instead of endless searching, Yellga uses AI to understand what you actually need and bring it straight to you — the fastest way from question to answer.",
+    'products.yelga.name': 'Yelga',
+    'products.yelga.tag': 'Find anything on the web, instantly.',
+    'products.yelga.body':
+      "Yelga is a smart discovery app that finds what you're looking for across the web in seconds. Instead of endless searching, Yelga uses AI to understand what you actually need and bring it straight to you — the fastest way from question to answer.",
 
     'why.title': 'Why Smart Recipe',
     'why.1.title': 'AI at the core',
@@ -106,9 +106,9 @@ export const ui = {
     'products.martin.tag': 'مساعدك الذكي، دائماً بخطوة تسبقك.',
     'products.martin.body':
       'مارتن مساعد شخصي على هاتفك يساعدك على التخطيط والتذكّر وإنجاز مهامك. مدعوماً بالذكاء الاصطناعي، يتولّى المهام الصغيرة والتذكيرات المهمة، لتركّز على ما يهمّك فعلاً — ويجعل كل يوم أكثر تنظيماً وسهولةً وسرعة.',
-    'products.yellga.name': 'يلغا',
-    'products.yellga.tag': 'اعثر على أي شيء على الويب في لحظة.',
-    'products.yellga.body':
+    'products.yelga.name': 'يلغا',
+    'products.yelga.tag': 'اعثر على أي شيء على الويب في لحظة.',
+    'products.yelga.body':
       'يلغا تطبيق بحث ذكي يجد ما تبحث عنه عبر الويب في ثوانٍ. بدلاً من البحث الطويل، يعتمد يلغا على الذكاء الاصطناعي لفهم ما تحتاجه فعلاً وتقديمه إليك مباشرة — أسرع طريق من السؤال إلى الإجابة.',
 
     'why.title': 'لماذا سمارت ريسيبي',
