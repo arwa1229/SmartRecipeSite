@@ -1,6 +1,6 @@
 ---
-// Stylized dark skeleton-UI phone mockups for the product cards.
-// Placeholder art until real app screenshots are available.
+// Stylized skeleton-UI phone mockups for the product cards, drawn after the
+// real Martin and Yelga app home screens.
 interface Props {
   app: 'martin' | 'yelga';
   class?: string;
@@ -15,44 +15,76 @@ const { app, class: className } = Astro.props;
   aria-hidden="true"
 >
   <rect x="4" y="4" width="212" height="432" rx="34" fill="#050707" stroke="#2A322F"></rect>
-  <rect
-    x="12"
-    y="12"
-    width="196"
-    height="416"
-    rx="27"
-    fill={app === 'yelga' ? '#F5F7F6' : '#121715'}></rect>
-  {app === 'martin' && (
-    <rect x="86" y="22" width="48" height="8" rx="4" fill="#2C3431" />
-  )}
+  <rect x="12" y="12" width="196" height="416" rx="27" fill="#F5F7F6"></rect>
 
   {
     app === 'martin' ? (
       <>
-        {/* Martin — assistant chat skeleton */}
-        <rect x="28" y="52" width="80" height="12" rx="6" fill="#E8ECEB" />
-        <rect x="28" y="72" width="52" height="8" rx="4" fill="#3C4643" />
-        <rect x="28" y="102" width="118" height="40" rx="14" fill="#1E2523" />
-        <rect x="40" y="114" width="82" height="7" rx="3.5" fill="#5A6663" />
-        <rect x="40" y="126" width="60" height="7" rx="3.5" fill="#3C4643" />
-        <rect x="74" y="158" width="118" height="52" rx="14" fill="#00BFA5" />
-        <rect x="86" y="170" width="84" height="7" rx="3.5" fill="#0A0D0C" opacity="0.75" />
-        <rect x="86" y="182" width="66" height="7" rx="3.5" fill="#0A0D0C" opacity="0.5" />
-        <rect x="86" y="194" width="44" height="7" rx="3.5" fill="#0A0D0C" opacity="0.5" />
-        <rect x="28" y="226" width="98" height="40" rx="14" fill="#1E2523" />
-        <rect x="40" y="238" width="66" height="7" rx="3.5" fill="#5A6663" />
-        <rect x="40" y="250" width="42" height="7" rx="3.5" fill="#3C4643" />
-        {/* reminder card */}
-        <rect x="28" y="288" width="164" height="58" rx="14" fill="#181E1C" stroke="#2C3431" />
-        <circle cx="48" cy="317" r="10" fill="#66E0CF" />
-        <path d="M44 317l3 3 6-6" stroke="#0A0D0C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-        <rect x="66" y="304" width="96" height="8" rx="4" fill="#E8ECEB" />
-        <rect x="66" y="320" width="68" height="7" rx="3.5" fill="#3C4643" />
+        {/* Martin — home screen: greeting, briefing card, in motion, delegate, schedule */}
+        {/* greeting + bell */}
+        <rect x="28" y="34" width="64" height="6" rx="3" fill="#98A29E" />
+        <rect x="28" y="46" width="118" height="13" rx="6" fill="#101828" />
+        <circle cx="184" cy="48" r="10" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <path d="M181 50a3 3 0 0 1 6 0m-7 0h8m-4 2v1" fill="none" stroke="#4A5450" stroke-width="1.4" stroke-linecap="round" />
+        {/* dark briefing card */}
+        <rect x="28" y="72" width="164" height="96" rx="14" fill="#10141F" />
+        <circle cx="42" cy="88" r="3" fill="#40806B" />
+        <rect x="50" y="85" width="64" height="6" rx="3" fill="#8B958F" />
+        <rect x="40" y="100" width="122" height="10" rx="5" fill="#F5F7F6" />
+        <rect x="40" y="118" width="102" height="6" rx="3" fill="#6A736F" />
+        <rect x="40" y="132" width="66" height="24" rx="6" fill="#232A36" />
+        <rect x="48" y="138" width="10" height="7" rx="3" fill="#F5F7F6" />
+        <rect x="48" y="148" width="36" height="4" rx="2" fill="#8B958F" />
+        <rect x="114" y="132" width="66" height="24" rx="6" fill="#232A36" />
+        <rect x="122" y="138" width="10" height="7" rx="3" fill="#F5F7F6" />
+        <rect x="122" y="148" width="30" height="4" rx="2" fill="#8B958F" />
+        {/* in motion */}
+        <rect x="28" y="182" width="58" height="9" rx="4.5" fill="#101828" />
+        <rect x="152" y="184" width="40" height="6" rx="3" fill="#40806B" />
+        {/* calling card */}
+        <rect x="28" y="200" width="164" height="56" rx="12" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <rect x="36" y="208" width="26" height="26" rx="8" fill="#E9F1EE" />
+        <path d="M45 216c0 4 4 8 8 8l2-3-3-3-2 1c-1-1-2-2-2-3l1-2-3-3z" fill="#40806B" />
+        <circle cx="74" cy="213" r="2.5" fill="#40806B" />
+        <rect x="80" y="210" width="48" height="5" rx="2.5" fill="#40806B" />
+        <rect x="70" y="221" width="88" height="8" rx="4" fill="#101828" />
+        <rect x="70" y="234" width="62" height="5" rx="2.5" fill="#98A29E" />
+        <rect x="36" y="246" width="148" height="4" rx="2" fill="#E2E6E4" />
+        <rect x="36" y="246" width="86" height="4" rx="2" fill="#40806B" />
+        {/* easy to delegate chips */}
+        <rect x="28" y="268" width="70" height="9" rx="4.5" fill="#101828" />
+        <rect x="28" y="286" width="48" height="22" rx="11" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <rect x="38" y="294" width="28" height="5" rx="2.5" fill="#4A5450" />
+        <rect x="82" y="286" width="52" height="22" rx="11" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <rect x="92" y="294" width="32" height="5" rx="2.5" fill="#4A5450" />
+        <rect x="140" y="286" width="52" height="22" rx="11" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <rect x="150" y="294" width="32" height="5" rx="2.5" fill="#4A5450" />
+        {/* later today */}
+        <rect x="28" y="322" width="66" height="9" rx="4.5" fill="#101828" />
+        <rect x="140" y="324" width="52" height="6" rx="3" fill="#40806B" />
+        <rect x="28" y="340" width="20" height="6" rx="3" fill="#98A29E" />
+        <rect x="56" y="338" width="80" height="8" rx="4" fill="#101828" />
+        <rect x="56" y="350" width="96" height="5" rx="2.5" fill="#98A29E" />
         {/* input bar */}
-        <rect x="28" y="376" width="164" height="34" rx="17" fill="#1E2523" />
-        <rect x="44" y="389" width="88" height="8" rx="4" fill="#3C4643" />
-        <circle cx="175" cy="393" r="12" fill="#00BFA5" />
-        <path d="M175 388v7m0 0l-3-3m3 3l3-3" stroke="#0A0D0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 175 391.5)" />
+        <rect x="28" y="364" width="164" height="30" rx="15" fill="#FFFFFF" stroke="#D6DCD9" stroke-width="1.5" />
+        <path d="M40 379h8m-4-4v8" stroke="#4A5450" stroke-width="1.6" stroke-linecap="round" />
+        <rect x="56" y="376" width="84" height="6" rx="3" fill="#B4BCB8" />
+        <circle cx="176" cy="379" r="11" fill="#40806B" />
+        <path d="M176 374a2.6 2.6 0 0 1 2.6 2.6v3a2.6 2.6 0 1 1-5.2 0v-3a2.6 2.6 0 0 1 2.6-2.6zm-5 5.6a5 5 0 0 0 10 0m-5 5v2" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" />
+        {/* bottom nav — five items, first active */}
+        <rect x="12" y="402" width="196" height="26" fill="#FFFFFF" />
+        <rect x="12" y="402" width="196" height="1.5" fill="#E2E6E4" />
+        <rect x="34" y="409" width="8" height="8" rx="2" fill="#40806B" />
+        <rect x="31" y="421" width="14" height="3" rx="1.5" fill="#40806B" />
+        <rect x="71" y="409" width="8" height="8" rx="2" fill="#9AA49F" />
+        <circle cx="82" cy="409" r="3" fill="#40806B" />
+        <rect x="68" y="421" width="14" height="3" rx="1.5" fill="#B4BCB8" />
+        <rect x="106" y="409" width="8" height="8" rx="2" fill="#9AA49F" />
+        <rect x="103" y="421" width="14" height="3" rx="1.5" fill="#B4BCB8" />
+        <rect x="141" y="409" width="8" height="8" rx="2" fill="#9AA49F" />
+        <rect x="138" y="421" width="14" height="3" rx="1.5" fill="#B4BCB8" />
+        <rect x="176" y="409" width="8" height="8" rx="2" fill="#9AA49F" />
+        <rect x="173" y="421" width="14" height="3" rx="1.5" fill="#B4BCB8" />
       </>
     ) : (
       <>
