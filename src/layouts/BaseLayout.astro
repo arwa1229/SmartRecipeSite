@@ -50,6 +50,13 @@ const sectionLinks = [
     <link rel="alternate" hreflang="ar" href={localePath('ar', currentPath)} />
   </head>
   <body class="bg-night text-fg min-h-screen font-sans antialiased">
+    <div
+      id="scroll-progress"
+      class="fixed top-0 start-0 z-[70] h-[3px] w-0 rounded-e-full"
+      style="background: linear-gradient(90deg, #00bfa5, #66e0cf); box-shadow: 0 0 12px rgba(0, 191, 165, 0.5);"
+      aria-hidden="true"
+    >
+    </div>
     <header
       class="bg-night/80 sticky top-0 z-50 border-b border-white/5 backdrop-blur-md"
     >
@@ -144,6 +151,62 @@ const sectionLinks = [
         );
         els.forEach((el) => io.observe(el));
       }
+
+      const reduced = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      // Scroll progress bar
+      const bar = document.getElementById('scroll-progress');
+      // Parallax: [data-parallax] elements shift relative to viewport center
+      type PItem = { el: HTMLElement; speed: number; center: number };
+      let pitems: PItem[] = [];
+      const measure = () => {
+        pitems = Array.from(
+          document.querySelectorAll<HTMLElement>('[data-parallax]')
+        ).map((el) => {
+          el.style.transform = '';
+          const rect = el.getBoundingClientRect();
+          return {
+            el,
+            speed: parseFloat(el.dataset.parallax || '0.08'),
+            center: rect.top + window.scrollY + rect.height / 2,
+          };
+        });
+      };
+
+      let ticking = false;
+      const update = () => {
+        ticking = false;
+        const y = window.scrollY;
+        if (bar) {
+          const max = document.documentElement.scrollHeight - innerHeight;
+          bar.style.width = max > 0 ? `${(y / max) * 100}%` : '0%';
+        }
+        if (reduced) return;
+        const viewCenter = y + innerHeight / 2;
+        for (const item of pitems) {
+          const offset = (item.center - viewCenter) * item.speed;
+          item.el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+        }
+      };
+      const onScroll = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      };
+      if (!reduced) measure();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener(
+        'resize',
+        () => {
+          if (!reduced) measure();
+          onScroll();
+        },
+        { passive: true }
+      );
+      update();
     </script>
   </body>
 </html>

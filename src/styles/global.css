@@ -129,6 +129,115 @@ html[lang="ar"] .font-heading {
   animation: pulse-glow 3.2s ease-in-out infinite;
 }
 
+/* ---------- Cinematic intro (first load) ---------- */
+
+.sr-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0a0d0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: intro-out 0.6s ease 1.35s forwards;
+}
+.sr-intro-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.sr-intro-bar {
+  display: block;
+  height: 10px;
+  width: 88px;
+  border-radius: 9999px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: bar-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.sr-intro-bar.b1 {
+  background: #00bfa5;
+  animation-delay: 0.08s;
+  box-shadow: 0 0 26px rgba(0, 191, 165, 0.6);
+}
+.sr-intro-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sr-intro-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f2f5f4;
+  opacity: 0;
+  animation: fade-in 0.35s ease 0.38s forwards;
+}
+.sr-intro-bar.b2 {
+  background: #f2f5f4;
+  width: 63px;
+  animation-delay: 0.26s;
+}
+.sr-intro-bar.b3 {
+  background: #66e0cf;
+  animation-delay: 0.44s;
+  box-shadow: 0 0 26px rgba(102, 224, 207, 0.5);
+}
+.sr-intro-word {
+  margin-top: 14px;
+  font-family: "Montserrat", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  color: #9aa5a2;
+  opacity: 0;
+  animation: fade-in 0.5s ease 0.66s forwards;
+}
+@keyframes bar-in {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* While the intro plays, hold the hero entrance back so it rises as the
+   overlay lifts. The .intro-playing class is set by an inline script. */
+body.intro-playing .hero-in {
+  animation-delay: calc(var(--d, 0s) + 1.15s);
+}
+
+/* ---------- Hero grid field ---------- */
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(102, 224, 207, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 224, 207, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(65% 65% at 50% 30%, black, transparent 78%);
+  -webkit-mask-image: radial-gradient(
+    65% 65% at 50% 30%,
+    black,
+    transparent 78%
+  );
+  animation: grid-pan 26s linear infinite;
+}
+@keyframes grid-pan {
+  to {
+    background-position: 44px 44px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -149,5 +258,11 @@ html[lang="ar"] .font-heading {
   .accent-gradient {
     color: #66e0cf;
     background: none;
+  }
+  .sr-intro {
+    display: none;
+  }
+  .hero-grid {
+    animation: none;
   }
 }
