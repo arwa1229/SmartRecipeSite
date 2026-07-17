@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+import { dirFor, localePath, useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  /** Path of the current page without locale prefix, e.g. "/" or "/contact" */
+  currentPath: string;
+}
+
+const { locale, title, description, currentPath } = Astro.props;
+const t = useTranslations(locale);
+const dir = dirFor[locale];
+
+const pageTitle = title
+  ? `${title} — ${t('site.name')}`
+  : `${t('site.name')} — ${t('site.tagline')}`;
+const pageDescription = description ?? t('site.description');
+
+const otherLocale: Locale = locale === 'en' ? 'ar' : 'en';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const nav = [
+  { href: localePath(locale, '/'), label: t('nav.home'), path: '/' },
+  { href: localePath(locale, '/contact'), label: t('nav.contact'), path: '/contact' },
+];
+---
+
+<!doctype html>
+<html lang={locale} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="alternate" hreflang="en" href={localePath('en', currentPath)} />
+    <link rel="alternate" hreflang="ar" href={localePath('ar', currentPath)} />
+  </head>
+  <body class="min-h-screen bg-white font-sans text-ink antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <a href={localePath(locale, '/')} class="flex items-center gap-2">
+          <img
+            src={`${base}/brand/logo-horizontal.svg`}
+            alt={`${t('site.name')} — ${t('site.tagline')}`}
+            class="h-9 w-auto sm:h-10"
+          />
+        </a>
+        <nav class="flex items-center gap-1 sm:gap-2" aria-label="Main">
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                aria-current={item.path === currentPath ? 'page' : undefined}
+                class:list={[
+                  'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  item.path === currentPath
+                    ? 'text-brand-dark'
+                    : 'text-slate-brand hover:text-ink',
+                ]}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+          <a
+            href={localePath(otherLocale, currentPath)}
+            class="ms-1 rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-brand hover:text-brand-dark"
+            lang={otherLocale}
+            dir={dirFor[otherLocale]}
+          >
+            {t('nav.langSwitch')}
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="mt-20 border-t border-slate-100 bg-slate-50">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6"
+      >
+        <img
+          src={`${base}/brand/logo-horizontal.svg`}
+          alt={t('site.name')}
+          class="h-8 w-auto opacity-80"
+        />
+        <p class="text-sm text-slate-brand">
+          © {new Date().getFullYear()} {t('site.name')}. {t('footer.rights')}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

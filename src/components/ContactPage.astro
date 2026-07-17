@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={t('contact.title')} currentPath="/contact">
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+        {t('contact.title')}
+      </h1>
+      <p class="mt-4 text-lg text-slate-brand">{t('contact.subtitle')}</p>
+    </div>
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-5">
+      <!--
+        Static site: the form needs a form-backend service to actually deliver
+        messages. Replace FORM_ENDPOINT with e.g. a Formspree endpoint
+        (https://formspree.io) once the company account is set up.
+      -->
+      <form
+        action="FORM_ENDPOINT"
+        method="POST"
+        class="space-y-5 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm lg:col-span-3"
+      >
+        <div>
+          <label for="name" class="mb-1.5 block text-sm font-semibold">
+            {t('contact.form.name')}
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20"
+          />
+        </div>
+        <div>
+          <label for="email" class="mb-1.5 block text-sm font-semibold">
+            {t('contact.form.email')}
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20"
+          />
+        </div>
+        <div>
+          <label for="message" class="mb-1.5 block text-sm font-semibold">
+            {t('contact.form.message')}
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full resize-y rounded-xl border border-slate-200 px-4 py-3 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="brand-gradient w-full rounded-xl px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-transform hover:scale-[1.02]"
+        >
+          {t('contact.form.submit')}
+        </button>
+      </form>
+
+      <div class="lg:col-span-2">
+        <div class="rounded-2xl bg-slate-50 p-8">
+          <h2 class="text-xl font-bold">{t('contact.info.title')}</h2>
+          <ul class="mt-6 space-y-4 text-slate-brand">
+            <li class="flex items-center gap-3">
+              <span class="brand-gradient inline-block size-2.5 shrink-0 rounded-full"></span>
+              <a
+                href={`mailto:${t('contact.info.email')}`}
+                class="hover:text-brand-dark"
+                dir="ltr"
+              >
+                {t('contact.info.email')}
+              </a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="brand-gradient inline-block size-2.5 shrink-0 rounded-full"></span>
+              <span dir="ltr">{t('contact.info.phone')}</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="brand-gradient inline-block size-2.5 shrink-0 rounded-full"></span>
+              <span>{t('contact.info.address')}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
