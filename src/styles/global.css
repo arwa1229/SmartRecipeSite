@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Smart Recipe brand — per Brand Guidelines v1.0 (May 2025) */
+  /* Smart Recipe brand — per Brand Guidelines v1.0 (May 2025), dark theme */
   --color-brand: #00bfa5; /* Smart Teal */
   --color-brand-light: #66e0cf; /* Light Teal */
-  --color-brand-deep: #009684; /* Darkened teal for text on light bg (AA) */
-  --color-ink: #111111; /* Charcoal / Black */
-  --color-muted: #5b6664; /* Secondary text */
-  --color-offwhite: #fafbfb; /* Page background */
+  --color-ink: #111111; /* Charcoal — text on teal fills */
+  --color-night: #0a0d0c; /* Page background */
+  --color-surface: #141817; /* Raised surfaces / bands */
+  --color-surface-2: #1a201e; /* Cards on surfaces */
+  --color-fg: #f2f5f4; /* Primary text */
+  --color-muted: #9aa5a2; /* Secondary text */
 
   --font-sans: "Inter", "Tajawal", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Montserrat", "Tajawal", ui-sans-serif, system-ui, sans-serif;
@@ -72,21 +74,59 @@ html[lang="ar"] .font-heading {
   animation: float-y 9s ease-in-out 1.2s infinite;
 }
 
-/* Drifting background blobs */
+/* Drifting background glow blobs */
 @keyframes drift {
   0%,
   100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(30px, -24px) scale(1.06);
+    transform: translate(30px, -24px) scale(1.08);
   }
   66% {
-    transform: translate(-20px, 18px) scale(0.97);
+    transform: translate(-24px, 20px) scale(0.95);
   }
 }
 .blob {
-  animation: drift 16s ease-in-out infinite;
+  animation: drift 14s ease-in-out infinite;
+}
+
+/* Animated gradient accent text */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.accent-gradient {
+  background-image: linear-gradient(
+    90deg,
+    #00bfa5,
+    #66e0cf,
+    #00bfa5,
+    #66e0cf
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-shift 5s linear infinite;
+}
+
+/* Breathing glow for key call-to-action */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px -6px rgba(0, 191, 165, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 55px -6px rgba(0, 191, 165, 0.75);
+  }
+}
+.pulse-glow {
+  animation: pulse-glow 3.2s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -101,7 +141,13 @@ html[lang="ar"] .font-heading {
   .hero-in,
   .float-slow,
   .float-slower,
-  .blob {
+  .blob,
+  .accent-gradient,
+  .pulse-glow {
     animation: none;
+  }
+  .accent-gradient {
+    color: #66e0cf;
+    background: none;
   }
 }

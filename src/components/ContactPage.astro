@@ -13,7 +13,13 @@ const t = useTranslations(locale);
 <BaseLayout locale={locale} title={t('contact.title')} currentPath="/contact">
   <section class="relative overflow-hidden">
     <div
-      class="blob bg-brand-light/25 absolute -top-24 -end-24 -z-10 size-80 rounded-full blur-3xl"
+      class="absolute inset-x-0 top-0 -z-10 h-[420px]"
+      style="background: radial-gradient(55% 60% at 50% 0%, rgba(0, 191, 165, 0.12), transparent 70%);"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="blob bg-brand/10 absolute -top-24 -end-24 -z-10 size-80 rounded-full blur-3xl"
       aria-hidden="true"
     >
     </div>
@@ -38,7 +44,7 @@ const t = useTranslations(locale);
         <form
           action="FORM_ENDPOINT"
           method="POST"
-          class="hero-in space-y-5 rounded-3xl border border-black/5 bg-white p-8 shadow-sm lg:col-span-3"
+          class="hero-in bg-surface space-y-5 rounded-3xl border border-white/5 p-8 lg:col-span-3"
           style="--d: 0.2s"
         >
           <div>
@@ -50,7 +56,7 @@ const t = useTranslations(locale);
               name="name"
               type="text"
               required
-              class="focus:border-brand focus:ring-brand/25 w-full rounded-xl border border-black/10 px-4 py-3 transition-colors outline-none focus:ring-2"
+              class="bg-night text-fg focus:border-brand focus:ring-brand/25 w-full rounded-xl border border-white/10 px-4 py-3 transition-colors outline-none focus:ring-2"
             />
           </div>
           <div>
@@ -62,7 +68,7 @@ const t = useTranslations(locale);
               name="email"
               type="email"
               required
-              class="focus:border-brand focus:ring-brand/25 w-full rounded-xl border border-black/10 px-4 py-3 transition-colors outline-none focus:ring-2"
+              class="bg-night text-fg focus:border-brand focus:ring-brand/25 w-full rounded-xl border border-white/10 px-4 py-3 transition-colors outline-none focus:ring-2"
             />
           </div>
           <div>
@@ -74,23 +80,25 @@ const t = useTranslations(locale);
               name="message"
               rows="5"
               required
-              class="focus:border-brand focus:ring-brand/25 w-full resize-y rounded-xl border border-black/10 px-4 py-3 transition-colors outline-none focus:ring-2"
+              class="bg-night text-fg focus:border-brand focus:ring-brand/25 w-full resize-y rounded-xl border border-white/10 px-4 py-3 transition-colors outline-none focus:ring-2"
             ></textarea>
           </div>
           <button
             type="submit"
-            class="bg-ink hover:bg-brand hover:text-ink w-full rounded-full px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            class="bg-brand text-ink hover:bg-brand-light pulse-glow w-full rounded-full px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
           >
             {t('contact.form.submit')}
           </button>
         </form>
 
         <div class="hero-in lg:col-span-2" style="--d: 0.3s">
-          <div class="bg-ink rounded-3xl p-8 text-white">
+          <div
+            class="bg-surface-2 rounded-3xl border border-white/5 p-8"
+          >
             <h2 class="font-heading text-xl font-bold">
               {t('contact.info.title')}
             </h2>
-            <ul class="mt-6 space-y-4 text-white/75">
+            <ul class="mt-6 space-y-4 text-white/70">
               <li class="flex items-center gap-3">
                 <span class="bg-brand inline-block h-1.5 w-5 shrink-0 rounded-full"></span>
                 <a
@@ -106,7 +114,7 @@ const t = useTranslations(locale);
                 <span dir="ltr">{t('contact.info.phone')}</span>
               </li>
               <li class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-5 shrink-0 rounded-full bg-white/70"></span>
+                <span class="bg-fg/60 inline-block h-1.5 w-5 shrink-0 rounded-full"></span>
                 <span>{t('contact.info.address')}</span>
               </li>
             </ul>
