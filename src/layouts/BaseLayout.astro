@@ -79,17 +79,6 @@ const sectionLinks = [
             ))
           }
           <a
-            href={localePath(locale, '/contact')}
-            class:list={[
-              'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-              currentPath === '/contact'
-                ? 'text-brand-light'
-                : 'text-muted hover:text-fg',
-            ]}
-          >
-            {t('nav.contact')}
-          </a>
-          <a
             href={localePath(otherLocale, currentPath)}
             class="hover:border-brand/60 hover:text-brand-light ms-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold transition-colors"
             lang={otherLocale}

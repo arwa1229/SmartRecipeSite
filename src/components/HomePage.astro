@@ -125,18 +125,18 @@ const whyItems = [
         {t('hero.body')}
       </p>
       <div
-        class="hero-in mt-10 flex flex-wrap items-center justify-center gap-4"
+        class="hero-in mx-auto mt-10 flex w-full max-w-md flex-col items-stretch justify-center gap-4 sm:w-auto sm:max-w-none sm:flex-row"
         style="--d: 0.36s"
       >
         <a
           href="#products"
-          class="bg-brand text-ink hover:bg-brand-light pulse-glow rounded-full px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105"
+          class="bg-brand text-ink hover:bg-brand-light pulse-glow rounded-full px-8 py-4 text-center text-base font-semibold transition-all duration-300 hover:scale-105 sm:min-w-60"
         >
           {t('hero.cta')}
         </a>
         <a
           href={localePath(locale, '/contact')}
-          class="text-fg hover:border-brand/60 hover:text-brand-light rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105"
+          class="text-fg hover:border-brand/60 hover:text-brand-light rounded-full border border-white/15 bg-white/5 px-8 py-4 text-center text-base font-semibold transition-all duration-300 hover:scale-105 sm:min-w-60"
         >
           {t('hero.ctaSecondary')}
         </a>
