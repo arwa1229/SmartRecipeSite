@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneMockup from '../components/PhoneMockup.astro';
 import MartinMark from '../components/MartinMark.astro';
+import YelgaMark from '../components/YelgaMark.astro';
 import { localePath, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -224,6 +225,9 @@ const whyItems = [
                 <div class="mt-8 flex items-center gap-3">
                   {product.app === 'martin' && (
                     <MartinMark class="text-fg h-9" />
+                  )}
+                  {product.app === 'yelga' && (
+                    <YelgaMark class="text-fg h-9" />
                   )}
                   <h3 class="font-heading text-2xl font-bold">
                     {product.name}
