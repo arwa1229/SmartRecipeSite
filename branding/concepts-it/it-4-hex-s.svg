@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Hex S">
+  <defs>
+    <linearGradient id="i4g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <!-- Hexagon (tech) housing the Smart S -->
+  <g transform="translate(10 10)">
+    <path d="M60 16 L96 37 V83 L60 104 L24 83 V37 Z" fill="none" stroke="#0F172A" stroke-width="7.5" stroke-linejoin="round"/>
+    <path d="M72 40 H56 a11.5 11.5 0 0 0 0 23 h8 a11.5 11.5 0 0 1 0 23 H48" fill="none" stroke="url(#i4g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="150" y="88" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#0F172A">Smart<tspan fill="url(#i4g)"> Recipe</tspan></text>
+  <text x="152" y="116" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>

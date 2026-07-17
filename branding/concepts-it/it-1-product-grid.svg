@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Smart Recipe logo — Product Grid">
+  <defs>
+    <linearGradient id="i1g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+  <!-- Portfolio grid: many products, one shipping out -->
+  <g transform="translate(10 10)">
+    <rect x="26" y="26" width="30" height="30" rx="9" fill="none" stroke="#0F172A" stroke-width="7"/>
+    <rect x="66" y="26" width="30" height="30" rx="9" fill="none" stroke="#0F172A" stroke-width="7"/>
+    <rect x="26" y="66" width="30" height="30" rx="9" fill="none" stroke="#0F172A" stroke-width="7"/>
+    <rect x="70" y="70" width="30" height="30" rx="9" fill="url(#i1g)"/>
+  </g>
+  <text x="150" y="88" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#0F172A">Smart<tspan fill="url(#i1g)"> Recipe</tspan></text>
+  <text x="152" y="116" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="500" letter-spacing="6.5" fill="#64748B">IT SOLUTIONS</text>
+</svg>
