@@ -23,9 +23,10 @@ const spoonColor = variant === 'dark' ? '#F2F5F4' : '#111111';
   <span
     aria-hidden="true"
     class:list={[
-      'font-heading inline-flex items-center text-[1.35rem] leading-none font-medium tracking-[0.16em]',
+      'inline-flex items-center text-[1.35rem] leading-none font-medium tracking-[0.16em]',
       textColor,
     ]}
+    style="font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif"
   >
     SMΛRT&nbsp;RECIP<svg
       viewBox="0 0 32 32"
@@ -40,7 +41,10 @@ const spoonColor = variant === 'dark' ? '#F2F5F4' : '#111111';
   </span>
   {
     tagline && (
-      <span class="text-brand mt-1.5 text-[0.55rem] leading-none font-medium tracking-[0.5em]">
+      <span
+        class="text-brand mt-1.5 text-[0.55rem] leading-none font-medium tracking-[0.5em]"
+        style="font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif"
+      >
         IT&nbsp;COMPANY
       </span>
     )
