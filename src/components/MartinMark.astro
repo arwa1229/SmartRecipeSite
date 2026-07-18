@@ -1,6 +1,6 @@
 ---
-// Martin app mark: line-drawn M whose right stem carries a teal
-// notification dot with signal arcs (from the Martin brand sheet).
+// Martin app mark, traced from the official logo: line-drawn M with a
+// sage-green dot above the right shoulder, flanked by double signal arcs.
 interface Props {
   class?: string;
 }
@@ -9,28 +9,40 @@ const { class: className } = Astro.props;
 ---
 
 <svg
-  viewBox="0 0 158 118"
+  viewBox="0 0 410 298"
   class:list={['h-10 w-auto', className]}
   aria-hidden="true"
 >
   <polyline
-    points="15,110 15,26 70,82 125,40 125,110"
+    points="110,230 110,100 205,182 293,118 293,230"
     fill="none"
     stroke="currentColor"
-    stroke-width="11"
+    stroke-width="22"
     stroke-linecap="round"
     stroke-linejoin="round"></polyline>
-  <circle cx="125" cy="15" r="11" fill="#129B85"></circle>
+  <circle cx="268" cy="85" r="21" fill="#4C9082"></circle>
   <path
-    d="M102 6 q-8 9 0 18"
+    d="M240 66 q-12 19 0 38"
     fill="none"
     stroke="currentColor"
-    stroke-width="5"
+    stroke-width="9"
     stroke-linecap="round"></path>
   <path
-    d="M148 6 q8 9 0 18"
+    d="M225 56 q-18 29 0 58"
     fill="none"
     stroke="currentColor"
-    stroke-width="5"
+    stroke-width="9"
+    stroke-linecap="round"></path>
+  <path
+    d="M296 66 q12 19 0 38"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="9"
+    stroke-linecap="round"></path>
+  <path
+    d="M311 56 q18 29 0 58"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="9"
     stroke-linecap="round"></path>
 </svg>
