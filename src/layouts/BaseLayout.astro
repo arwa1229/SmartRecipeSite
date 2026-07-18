@@ -24,12 +24,6 @@ const pageDescription = description ?? t('site.description');
 const otherLocale: Locale = locale === 'en' ? 'ar' : 'en';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const home = localePath(locale, '/');
-
-const sectionLinks = [
-  { href: `${home}#about`, label: t('nav.about') },
-  { href: `${home}#products`, label: t('nav.products') },
-  { href: `${home}#why`, label: t('nav.why') },
-];
 ---
 
 <!doctype html>
@@ -67,17 +61,7 @@ const sectionLinks = [
         <a href={home} class="shrink-0">
           <Logo variant="dark" />
         </a>
-        <nav class="flex items-center gap-0.5 sm:gap-1" aria-label="Main">
-          {
-            sectionLinks.map((item) => (
-              <a
-                href={item.href}
-                class="text-muted hover:text-fg hidden rounded-lg px-3 py-2 text-sm font-medium transition-colors md:block"
-              >
-                {item.label}
-              </a>
-            ))
-          }
+        <nav class="flex items-center" aria-label="Main">
           <a
             href={localePath(otherLocale, currentPath)}
             class="hover:border-brand/60 hover:text-brand-light ms-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold transition-colors"
@@ -103,20 +87,6 @@ const sectionLinks = [
         <p class="text-brand-light text-sm font-medium">
           {t('site.name')} — {t('footer.slogan')}
         </p>
-        <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {
-            [...sectionLinks, { href: localePath(locale, '/contact'), label: t('nav.contact') }].map(
-              (item) => (
-                <a
-                  href={item.href}
-                  class="hover:text-fg text-sm text-white/50 transition-colors"
-                >
-                  {item.label}
-                </a>
-              )
-            )
-          }
-        </nav>
         <p class="text-xs text-white/35">
           © {new Date().getFullYear()} {t('site.name')}. {t('footer.rights')}
         </p>
