@@ -20,6 +20,19 @@ as a Wi‑Fi–style connectivity signal. One clean mark that says both
 | `logo-app-icon.svg` | App icon / favicon — gradient rounded square |
 | `logo-showcase.html` | Preview page showing all variants |
 
+## PNG exports (`png/`)
+
+Transparent, high-resolution renders of the SVGs for places that don't take SVG
+(social media, Word/PowerPoint, email signatures).
+
+| File | Size |
+|------|------|
+| `png/logo-horizontal.png` / `-dark.png` | 2480 × 560 |
+| `png/logo-stacked.png` | 1360 × 1040 |
+| `png/logo-icon.png` / `-dark.png` | 1024 × 1024 |
+| `png/logo-app-icon.png` | 1024 × 1024 |
+| `png/favicon-512.png`, `png/apple-touch-icon.png`, `png/favicon-32.png` | 512, 180, 32 |
+
 ## Colors
 
 | Color | Hex | Role |
